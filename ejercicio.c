@@ -4,14 +4,22 @@
 void obtenerDimensiones();
 int **crearMatriz();
 void imprimirMatriz(int **matriz);
+void cambiarDiagonal(int **matriz);
 
 int m = 0;
 int n = 0;
 
-int main() 
+int main()
 {
     int **matriz = crearMatriz();
+
+    printf("Matriz inicializada en 0:\n");
     imprimirMatriz(matriz);
+
+    cambiarDiagonal(matriz);
+    printf("Matriz con la diagonal cambiada: \n");
+    imprimirMatriz(matriz);
+    
     free(matriz);
 }
 
@@ -33,6 +41,20 @@ int **crearMatriz()
         matriz[i] = calloc(n, sizeof(int));
     }
     return matriz;
+}
+
+void cambiarDiagonal(int **matriz)
+{
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (i == j)
+            {
+                matriz[i][j] = 1;
+            }
+        }
+    }
 }
 
 void imprimirMatriz(int **matriz)
