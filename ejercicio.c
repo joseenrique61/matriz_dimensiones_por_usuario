@@ -21,7 +21,7 @@ int main()
     imprimirMatriz(matriz);
 
     cambiarDiagonal(matriz);
-    printf("Matriz con la diagonal cambiada: \n");
+    printf("\nMatriz con la diagonal cambiada: \n");
     imprimirMatriz(matriz);
     
     //Se libera la memoria usada por matriz.
